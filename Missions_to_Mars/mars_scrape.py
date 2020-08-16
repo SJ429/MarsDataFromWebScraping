@@ -11,44 +11,51 @@ def scrape():
     executable_path = {"executable_path": "chromedriver.exe"}
     browser = Browser("chrome", **executable_path, headless=False)
 
-    # Scrape page into Soup
-    html = browser.html
-    soup = bs(html, "html.parser")
-
     # Visit Mars News URL to scrape and collect lastest News title and paragraph text
     url = "https://mars.nasa.gov/news/"
     browser.visit(url)
-
     time.sleep(1)
 
     # Scrape page into Soup
     html = browser.html
     soup = bs(html, "html.parser")
-
     soup.find_all('div', class_='content_title')
+
     soup.find_all('div', class_='content_title')[1].text
+
     news_title=soup.find_all('div', class_='content_title')[1].text
     print(news_title)
 
     soup.find('div', class_='article_teaser_body')
+
     news_paragraph = soup.find('div', class_='article_teaser_body').text
     print(news_paragraph)
 
     soup.find('div', class_='list_image').find('img')['src']
 
+
     # # JPL Mars Space Images - Featured Image
     # Visit Mars News URL to scrap and collect featured image
+    # Website Url 
     url='https://www.jpl.nasa.gov'
     featured_image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(featured_image_url)
-   
+
+    # Get Mars Feature Image
+    #HTML to scrape 
     html = browser.html
+
+    # Parse HTML with Beautiful Soup
     soup = bs(html, 'html.parser')
     time.sleep(2)
 
-    image_link = soup.find('a', id= 'full_image')['data-fancybox-href']  
+    # Retrieve background-image url 
+    image_link = soup.find('a', id= 'full_image')['data-fancybox-href']
+
     # Concatenate website url with scrapped route
     featured_image_url = url + image_link
+
+    # Display full link to featured image
     featured_image_url
 
     # Visit Mars facts URL to scrape
@@ -58,10 +65,12 @@ def scrape():
     # Use Pandas to "read_html" to parse the URL
     tables = pd.read_html(facts_url)
     tables
+
     # Make tables with Mars facts into a Dataframe
     table = tables[0]
     table.columns = ['Description', 'Mars']
     table
+
     # Convert mars-df into a html table
     html_table = table.to_html()
     html_table
@@ -72,14 +81,18 @@ def scrape():
     hemispheres_html = browser.html
     hemispheres_soup = bs(hemispheres_html, 'html.parser')
     time.sleep(1)
-    #iterate through each hemisphere data
+
+    # Iterate through each hemisphere data
     for x in range(4):
     #html object
         html = browser.html
+        
     #Parse HTML with Beautiful Soup
         images_soup = bs(html, 'html.parser')
+        
         mars_hemispheres = images_soup.find('div', class_='collapsible results')
         mars_hemispheres_1 = mars_hemispheres.find_all('div', class_='item')
+        
         hems_image_urls = []
         
     for mar in mars_hemispheres_1:
@@ -103,6 +116,7 @@ def scrape():
         hems_image_urls.append(image_dict)
         
     print(hems_image_urls)
+
                 
     m_dict ={
             'news_title': news_title,
@@ -117,5 +131,3 @@ def scrape():
 
     return m_dict
   
-    
-

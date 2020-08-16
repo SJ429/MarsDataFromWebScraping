@@ -20,20 +20,20 @@
                    <!-- News Section -->
                 <div class="container">
                     <div class="row">
-                        <h2 class="title">Latest Mars News</h2>
-                        <h3><span style="font-weight: bold;">{{ mars_data.news_title }}</span></h3>
-                        <p><span style="font-weight: bold;">{{ mars_data.news_paragraph}}</span></p>
+                        <h2 class="title" style="font-weight: bold;">Latest Mars News</h2>
+                        <h3><span style="font-weight: medium;">{{ mars_data.news_title }}</span></h3>
+                        <p><span style="font-size: 1px";>{{ mars_data.news_paragraph}}</span></p>
                     </div>
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
-                            <h2>Featured Mars Image</h2>
+                            <h3 class="title" style="font-weight: bold;">Featured Mars Image</h3>
                             <img src="{{ mars_data.featured_image_url }}" style="max-width: 100%;" max-heigh:auto; alt="featured_image" /><br />
                         </div><br /> 
                          <!-- Table -->
                         <div class="col-lg-5">
-                           <h3>Mars Facts</h3>
+                           <h2 class="title" style="font-weight: bold;"> Mars Facts</h2>
                             <style>
                                 table,
                                 th,
@@ -50,27 +50,27 @@
                     </div>
                 </div>
               <div class="row">
-            <h3 class="text-center">Mars Hemispheres</h3>
+            <h3 class="text-center" style="font-weight: bold;"> Mars Hemispheres</h3>
          <div class="row">
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <img src="{{ mars_data.hemisphere_images[0]['img_url']}}" style="width: 100%;" class="img-responsive"
                      style="padding-right: 20px; padding left: 20px;" alt=" {{mars_data.hemisphere_images[0]['title']}} " />
-                    <h5>{{mars_data.hemisphere_images[0]['title']}}</h5>
+                    <h4>{{mars_data.hemisphere_images[0]['title']}}</h4>
                     ​
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <img src="{{ mars_data.hemisphere_images[1]['img_url']}}" style="width: 100%;" class="img-responsive" 
                     style="padding-right: 20px; padding left: 20px;" alt=" {{mars_data.hemisphere_images[1]['title'] }} " />
                     <h4>{{mars_data.hemisphere_images[1]['title']}}</h4>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <img src="{{ mars_data.hemisphere_images[2]['img_url']}}" style="width: 100%;" class="img-responsive" 
                     style="padding-right: 20px; padding left: 20px;" alt=" {{mars_data.hemisphere_images[2]['title']}} " />
                     <h4>{{mars_data.hemisphere_images[2]['title']}}</h4>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <img src="{{ mars_data.hemisphere_images[3]['img_url']}}" style="width: 100%;" class="img-responsive" 
                     style="padding-right: 20px; padding left: 20px;" alt=" {{mars_data.hemisphere_images[3]['title']}} " />
                     <h4>{{mars_data.hemisphere_images[3]['title']}}</h4>

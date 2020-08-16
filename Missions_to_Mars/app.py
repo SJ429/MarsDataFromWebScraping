@@ -10,11 +10,7 @@ app = Flask(__name__)
 app.config["MONGO_URI"] ="mongodb://localhost:27017/mars_app"
 mongo = PyMongo(app)
 
-# PyMongo Setup
-#client = pymongo.MongoClient('mongodb://localhost:27017')
-#db = client.mars_db
-
-# Establish home route
+    # Establish home route
 
 @app.route("/")
 def home():
@@ -30,8 +26,8 @@ def home():
 @app.route("/scrape")
 def scrape():
 
-    # Run scrape function
-    
+  # Run scrape function
+
     mars_data =mongo.db.mars_data
 
     mars_data = mars_scrape.scrape()
