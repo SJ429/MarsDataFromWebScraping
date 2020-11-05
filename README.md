@@ -5,7 +5,7 @@ The purpose of this project was to demonstrate web scraping using Python and sto
 Beautiful Soup was used to scrape and parse out specific data from NASA Mars News Website included the latest News Title and Paragraph Text,
 JPL Mars Space Images and Featured Image.
 
-![](Missions_to_Mars/images/Capture_1.PNG)
+![](Missions_to_Mars/images/Capture_8.PNG)
 
 Other technologies used included Pandas, Flask Pymongo, Jupyter Notebook and Chromedriver.
 
