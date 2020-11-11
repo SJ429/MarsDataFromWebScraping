@@ -1,5 +1,5 @@
 
-# Web Scraping - Mission to Mars
+# Web Scraping Mars
 
 The purpose of this assignment was to demonstrate web scraping using Python and storing the scraped data in a non-relational database, MongoDB.
 
