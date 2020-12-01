@@ -6,6 +6,7 @@ The purpose of this assignment was to demonstrate web scraping using Python and 
 Beautiful Soup was used to scrape and parse out specific data from NASA Mars News Website included the latest News Title and Paragraph Text,
 JPL Mars Space Images and Featured Image. 
 
+## Process
 A Jupyter Notebook file called `mission_to_mars.ipynb` was created and uses to run Python codes to scrape and analyse the data.
 
 
